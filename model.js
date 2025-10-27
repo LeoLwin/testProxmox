@@ -2,19 +2,22 @@ const db = require("./dbconfig");
 
 const getList = async () => {
     console.log("GetList : ")
-    let connection
+    // let connection;
     try {
 
-        connection = db.getConnection();
-        if (!connection) {
-            return { "message": "No connection found" }
-        }
-        console.log("we have connection")
-        const [result] = await db.query("SELECT * FROM users");
-        if (result.length === 0) {
-            return { "message": "No data found" }
-        }
-        return { result }
+        return [
+            { "data": "hello this is data" }
+        ]
+        // connection = db.getConnection();
+        // if (!connection) {
+        //     return { "message": "No connection found" }
+        // }
+        // console.log("we have connection")
+        // const [result] = await db.query("SELECT * FROM users");
+        // if (result.length === 0) {
+        //     return { "message": "No data found" }
+        // }
+        // return { result }
     } catch (error) {
         return { "message": error.message }
     }
