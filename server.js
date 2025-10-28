@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const { getList } = require("./model")
-// require("./dbconfig")
+require("./dbconfig")
 
 app.use(express.json());
 

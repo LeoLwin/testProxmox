@@ -2,7 +2,7 @@ const mysql = require('mysql2');
 
 const pool = mysql.createPool({
 
-    host: "localhost",
+    host: "192.168.100.142",
     port: 3306,
     user: "root",
     password: "root",
@@ -14,6 +14,7 @@ const pool = mysql.createPool({
 // Ping database to check for common exception errors.
 pool.getConnection((err, connection) => {
     if (err) {
+        console.log("error : ", err)
         if (err.code === 'PROTOCOL_CONNECTION_LOST') {
             console.error('Database connection was closed.');
         }
